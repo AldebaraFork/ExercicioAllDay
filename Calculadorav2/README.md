@@ -1,2 +1,2 @@
 # ExercicioTodoDia
-A repository so I can post daily activities.
+First version of CalculatorV2, now with 3 more options
