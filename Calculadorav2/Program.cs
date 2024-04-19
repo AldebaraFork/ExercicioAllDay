@@ -23,6 +23,12 @@
                 case 3:
                     operacoes.Multiplicacao();
                     break;
+                case 4:
+                    operacoes.Divisao();
+                    break;
+                case 5:
+                    operacoes.Tabuada();
+                    break;
             }
 
         }
