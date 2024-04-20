@@ -19,6 +19,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine());
             double Numer3 = Numer1 + Numer2;
             Console.WriteLine("A soma de " + Numer1 + " + " + Numer2 + " é: " + Numer3);
+        
         }
         //SUBTRAÇÃO
         public void Subtracao()
@@ -30,6 +31,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
             double Numer3 = Numer1 - Numer2;
             Console.WriteLine("A subtração de " + Numer1 + " - " + Numer2 + " é: " + Numer3.ToString(CultureInfo.InvariantCulture));
+         
         }
         //MULTIPLICAÇÃO
         public void Multiplicacao()
@@ -41,6 +43,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine());
             double Numer3 = Numer1 * Numer2;
             Console.WriteLine("A multiplicação de " + Numer1 + " * " + Numer2 + " é: " + Numer3);
+       
         }
         //TABUADA
         public void Divisao()
@@ -52,6 +55,7 @@ namespace CalculadoraV2
             if (Numer1 == 0)
             {
                 Console.WriteLine("0 Não é um numero divisivel! tente novamente. ");
+              
             }
             else
             {
@@ -60,6 +64,7 @@ namespace CalculadoraV2
                 if (Numer2 == 0)
                 {
                     Console.WriteLine("0 Não é um numero divisivel! tente novamente. ");
+                 
                 }
                 else
                 {
@@ -86,7 +91,7 @@ namespace CalculadoraV2
         public void MOD()
         {
             Console.WriteLine("Você selecionou a opção MOD! (Resto da divisão)");
-            Console.Write("Por-favor digite o primeiro numero!, lembrando que 0 não é um numero divisivel.")
+            Console.Write("Por-favor digite o primeiro numero!, lembrando que 0 não é um numero divisivel.");
             double Numer1 = double.Parse(Console.ReadLine());
             if (Numer1 == 0)
             {
@@ -95,11 +100,11 @@ namespace CalculadoraV2
             }
             else
             {
-                Console.Write("Por-favor digite o segundo numero! ")
+                Console.Write("Por-favor digite o segundo numero! ");
                 double Numer2 = double.Parse(Console.ReadLine());
                 if (Numer2 == 0)
                 {
-                    Console.WriteLine("0 não é um numero divisivel! tente novamente.")
+                    Console.WriteLine("0 não é um numero divisivel! tente novamente.");
 
                 }
                 else
@@ -110,9 +115,10 @@ namespace CalculadoraV2
             }
 
         }
+        //CALCULAR NOTA
         public void CalcularNota()
         {
-            Console.WriteLine("Você selecionou a opção calcular nota!");
+            Console.WriteLine("Você selecionou a opção calcular nota! Favor utilizar virgula.");
             Console.WriteLine("Por-favor quantas notas voce gostaria de calcular? minimo de 2 e até um maximo de 4 ");
             Console.WriteLine("Lembrete! os parametros para aprovação ou reprovação dependerâo da sua instituição!");
             int QuantidadeNotas = int.Parse(Console.ReadLine());
@@ -124,29 +130,29 @@ namespace CalculadoraV2
                     Console.Write("Digite a segunda nota: ");
                     double Nota2 = double.Parse(Console.ReadLine());
                     double ResultadoNota = (Nota1 + Nota2) / 2;
-                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota.ToString("F2", CultureInfo.InvariantCulture));
                     break;
                 case 3:
                     Console.Write("Digite a primeira nota: ");
-                    double Nota1 = double.Parse(Console.ReadLine());
-                    Console.Write("Digite a segunda nota: ")
-                    double Nota2 = double.Parse(Console.ReadLine());
-                    Console.Write("Digite a terceira nota: ");
                     double Nota3 = double.Parse(Console.ReadLine());
-                    double ResultadoNota = (Nota1 + Nota2 + Nota3) / 3;
-                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    Console.Write("Digite a segunda nota: ");
+                    double Nota4 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a terceira nota: ");
+                    double Nota5 = double.Parse(Console.ReadLine());
+                    double ResultadoNota2 = (Nota3 + Nota4 + Nota5) / 3;
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota2.ToString("F2", CultureInfo.InvariantCulture));
                     break;
                 case 4:
                     Console.Write("Digite a primeta nota: ");
-                    double Nota1 = double.Parse(Console.ReadLine());
+                    double Nota6 = double.Parse(Console.ReadLine());
                     Console.Write("Digite a segunda nota:: ");
-                    double Nota2 = double.Parse(Console.ReadLine());
-                    Console.Write("Digite a terceira nota: ")
-                    double Nota3 = double.Parse(Console.ReadLine());
+                    double Nota7 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a terceira nota: ");
+                    double Nota8 = double.Parse(Console.ReadLine());
                     Console.Write("Digite a quarta nota: ");
-                    double Nota4 = double.Parse(Console.ReadLine());
-                    double ResultadoNota = (Nota1 + Nota2 + Nota3 + Nota4) / 4;
-                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    double Nota9 = double.Parse(Console.ReadLine());
+                    double ResultadoNota3 = (Nota6 + Nota7 + Nota8 + Nota9) / 4;
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota3.ToString("F2",CultureInfo.InvariantCulture));
                     break;
                 default:
                     Console.WriteLine("Opção invalida! tente novamente.");
