@@ -110,6 +110,49 @@ namespace CalculadoraV2
             }
 
         }
+        public void CalcularNota()
+        {
+            Console.WriteLine("Você selecionou a opção calcular nota!");
+            Console.WriteLine("Por-favor quantas notas voce gostaria de calcular? minimo de 2 e até um maximo de 4 ");
+            Console.WriteLine("Lembrete! os parametros para aprovação ou reprovação dependerâo da sua instituição!");
+            int QuantidadeNotas = int.Parse(Console.ReadLine());
+            switch (QuantidadeNotas)
+            {
+                case 2:
+                    Console.Write("Digite a primeira nota: ");
+                    double Nota1 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a segunda nota: ");
+                    double Nota2 = double.Parse(Console.ReadLine());
+                    double ResultadoNota = (Nota1 + Nota2) / 2;
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    break;
+                case 3:
+                    Console.Write("Digite a primeira nota: ");
+                    double Nota1 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a segunda nota: ")
+                    double Nota2 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a terceira nota: ");
+                    double Nota3 = double.Parse(Console.ReadLine());
+                    double ResultadoNota = (Nota1 + Nota2 + Nota3) / 3;
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    break;
+                case 4:
+                    Console.Write("Digite a primeta nota: ");
+                    double Nota1 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a segunda nota:: ");
+                    double Nota2 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a terceira nota: ")
+                    double Nota3 = double.Parse(Console.ReadLine());
+                    Console.Write("Digite a quarta nota: ");
+                    double Nota4 = double.Parse(Console.ReadLine());
+                    double ResultadoNota = (Nota1 + Nota2 + Nota3 + Nota4) / 4;
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota);
+                    break;
+                default:
+                    Console.WriteLine("Opção invalida! tente novamente.");
+                    break;
+            }
+        }
 
     }
 }

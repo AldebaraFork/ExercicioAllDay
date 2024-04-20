@@ -12,6 +12,7 @@
             Console.WriteLine("4 - Divisão");
             Console.WriteLine("5 - Tabuada");
             Console.WriteLine("6 - MOD");
+            Console.WriteLine("7 - Notas");
             int OpcaoSelcionada = int.Parse(Console.ReadLine());
             switch (OpcaoSelcionada)
             {
@@ -33,8 +34,11 @@
                 case 6:
                     operacoes.MOD();
                     break;
+                case 7:
+                    operacoes.CalcularNota();
+                    break;
                 default:
-                    Console.WriteLine("Ooção invalida! ")
+                    Console.WriteLine("Ooção invalida! tente novamente");
                     break;
             }
 
