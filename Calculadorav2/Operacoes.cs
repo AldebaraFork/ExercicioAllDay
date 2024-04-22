@@ -19,7 +19,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine());
             double Numer3 = Numer1 + Numer2;
             Console.WriteLine("A soma de " + Numer1 + " + " + Numer2 + " é: " + Numer3);
-        
+
         }
         //SUBTRAÇÃO
         public void Subtracao()
@@ -31,7 +31,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine().ToString(CultureInfo.InvariantCulture));
             double Numer3 = Numer1 - Numer2;
             Console.WriteLine("A subtração de " + Numer1 + " - " + Numer2 + " é: " + Numer3.ToString(CultureInfo.InvariantCulture));
-         
+
         }
         //MULTIPLICAÇÃO
         public void Multiplicacao()
@@ -43,7 +43,7 @@ namespace CalculadoraV2
             double Numer2 = double.Parse(Console.ReadLine());
             double Numer3 = Numer1 * Numer2;
             Console.WriteLine("A multiplicação de " + Numer1 + " * " + Numer2 + " é: " + Numer3);
-       
+
         }
         //TABUADA
         public void Divisao()
@@ -55,7 +55,7 @@ namespace CalculadoraV2
             if (Numer1 == 0)
             {
                 Console.WriteLine("0 Não é um numero divisivel! tente novamente. ");
-              
+
             }
             else
             {
@@ -64,7 +64,7 @@ namespace CalculadoraV2
                 if (Numer2 == 0)
                 {
                     Console.WriteLine("0 Não é um numero divisivel! tente novamente. ");
-                 
+
                 }
                 else
                 {
@@ -152,13 +152,54 @@ namespace CalculadoraV2
                     Console.Write("Digite a quarta nota: ");
                     double Nota9 = double.Parse(Console.ReadLine());
                     double ResultadoNota3 = (Nota6 + Nota7 + Nota8 + Nota9) / 4;
-                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota3.ToString("F2",CultureInfo.InvariantCulture));
+                    Console.WriteLine("A media das suas notas são de: " + ResultadoNota3.ToString("F2", CultureInfo.InvariantCulture));
                     break;
                 default:
                     Console.WriteLine("Opção invalida! tente novamente.");
                     break;
             }
         }
+        //MMC
+        public int CalcularMDC()
+        {
+            int numero1 = int.Parse(Console.ReadLine());
+            int numero2 = int.Parse(Console.ReadLine());
+            // Validação de entrada
+            if (numero2 == 0)
+            {
+                throw new ArgumentException("O divisor não pode ser zero.");
+            }
+
+            // Casos especiais
+            if (numero1 == numero2)
+            {
+                return numero1;
+            }
+
+            if (numero1 == 1 || numero2 == 1)
+            {
+                return 1;
+            }
+
+            int resto;
+            int mdc = numero2;
+
+            while (true)
+            {
+                resto = numero1 % mdc;
+                numero1 = mdc;
+                mdc = resto;
+
+                if (resto == 0)
+                {
+                    break;
+                }
+            }
+
+            return mdc;
+        }
+
+
 
     }
 }

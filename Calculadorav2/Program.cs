@@ -13,6 +13,7 @@
             Console.WriteLine("5 - Tabuada");
             Console.WriteLine("6 - MOD");
             Console.WriteLine("7 - Notas");
+            Console.WriteLine("8 - MMC");
             int OpcaoSelcionada = int.Parse(Console.ReadLine());
             switch (OpcaoSelcionada)
             {
@@ -36,6 +37,9 @@
                     break;
                 case 7:
                     operacoes.CalcularNota();
+                    break;
+                case 8:
+                    operacoes.CalcularMDC();
                     break;
                 default:
                     Console.WriteLine("Ooção invalida! tente novamente");
