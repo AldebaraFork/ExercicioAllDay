@@ -162,7 +162,10 @@ namespace CalculadoraV2
         //MMC
         public int CalcularMDC()
         {
+            Console.WriteLine("Você selecionou a opção calcular MMC!");
+            Console.Write("Digite o primeiro numero: ");
             int numero1 = int.Parse(Console.ReadLine());
+            Console.Write("Digite o segundo numero: ");
             int numero2 = int.Parse(Console.ReadLine());
             // Validação de entrada
             if (numero2 == 0)
@@ -195,8 +198,9 @@ namespace CalculadoraV2
                     break;
                 }
             }
-
+            Console.WriteLine("O MDC dos numeros escolhidos é: " + mdc);
             return mdc;
+            
         }
 
 
