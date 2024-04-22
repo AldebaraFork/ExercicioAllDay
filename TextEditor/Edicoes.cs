@@ -41,7 +41,7 @@ namespace TextEditorV2
             }
             else
             {
-                Console.WriteLine("A palavra nao existe no contexto inserido!");
+                Console.WriteLine("A palavra nao existe no texto inserido!");
             }
         }
         public void TrocarPalavra()
