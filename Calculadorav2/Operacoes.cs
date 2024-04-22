@@ -198,7 +198,7 @@ namespace CalculadoraV2
                     break;
                 }
             }
-            Console.WriteLine("O MDC dos numeros escolhidos é: " + mdc);
+            Console.WriteLine("O MDC dos numeros escolhidos é de: " + mdc);
             return mdc;
             
         }
