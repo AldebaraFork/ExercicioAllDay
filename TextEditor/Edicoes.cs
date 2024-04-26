@@ -56,5 +56,9 @@ namespace TextEditorV2
             string TextoModificado = TextoInserido.Replace(PalavraSubstituida, PalavraSubstituta);
             Console.WriteLine(TextoModificado);
         }
+        
+        
+
+       
     }
 }
