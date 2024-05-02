@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Operacoes operacoes = new Operacoes();
+          
             Console.WriteLine("Olá bem vindo a calculadora V2! Por-favor digite a opção desejada: ");
             Console.WriteLine("1 - Adição");
             Console.WriteLine("2 - Subtração");
@@ -18,28 +18,36 @@
             switch (OpcaoSelcionada)
             {
                 case 1:
-                    operacoes.Soma();
+                    Soma soma = new Soma();
+                    soma.CalcularSoma();
                     break;
                 case 2:
-                    operacoes.Subtracao();
+                    Subtracao subtracao = new Subtracao();
+                    subtracao.CalcularSubtracao();
                     break;
                 case 3:
-                    operacoes.Multiplicacao();
+                    Multiplicar Multiplicar = new Multiplicar();
+                    Multiplicar.CalcularMultiplicacao();
                     break;
                 case 4:
-                    operacoes.Divisao();
+                    Divisao divisao = new Divisao();
+                    divisao.CalcularDivisao();
                     break;
                 case 5:
-                    operacoes.Tabuada();
+                    Tabuada tabuada = new Tabuada();
+                    tabuada.CalcularTabuada();
                     break;
                 case 6:
-                    operacoes.MOD();
+                    MOD mod = new MOD();
+                    mod.Calcularmod();
                     break;
                 case 7:
-                    operacoes.CalcularNota();
+                    Nota nota = new Nota();
+                    nota.CalcularNota();
                     break;
                 case 8:
-                    operacoes.CalcularMDC();
+                    MDC mdc = new MDC();
+                    mdc.CalcularMDC();
                     break;
                 default:
                     Console.WriteLine("Ooção invalida! tente novamente");
