@@ -6,7 +6,7 @@ namespace TextEditorV2
     {
         static void Main(string[] args)
         {
-            Edicoes edicoes = new Edicoes();
+            
             Console.WriteLine("Olá, bem vindo ao Editor de Texto, Escolha uma opção! ");
             Console.WriteLine("1 - Traduzir texto para maiúsculo. ");
             Console.WriteLine("2 - Traduzir texto para minúsculo. ");
@@ -17,19 +17,24 @@ namespace TextEditorV2
             switch (OpcaoSelecionada)
             {
                 case 1:
-                    edicoes.TextoMaiusculo();
+                    TextoMaiusculo textinhoMai = new TextoMaiusculo();
+                    textinhoMai.textoMaiusculo();
                     break;
                 case 2:
-                    edicoes.TextoMinusculo();
+                    TextoMinusculo textinhoMin = new TextoMinusculo();
+                    textinhoMin.textoMinusculo();;
                     break;
                 case 3:
-                    edicoes.QuantidadeCaracteres();
+                    Caracteres carac = new Caracteres();
+                    carac.QuantidadeCaracteres();
                     break;
                 case 4:
-                    edicoes.VerificarPalavra();
+                    VerificarPalavras palavrinhas = new VerificarPalavras();
+                    palavrinhas.VerificarPalavra();
                     break;
                 case 5:
-                    edicoes.TrocarPalavra();
+                    TrocarPalavraTexto tradepalavra = new TrocarPalavraTexto();
+                    tradepalavra.TrocarPalavra();
                     break;
             }
 
