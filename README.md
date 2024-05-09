@@ -6,3 +6,6 @@ Calculadorav2 is the first activity complete from this repository! Now i´m gonn
 
 # ExercicioAllDay 24/04/2024 
 I´m gonna start some OOP´s exercises today.
+
+# ExercicioAllDay 08/05/2024 
+Now im trying to improve more performance into my exercises
