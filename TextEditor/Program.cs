@@ -6,13 +6,14 @@ namespace TextEditorV2
     {
         static void Main(string[] args)
         {
-            
+
             Console.WriteLine("Olá, bem vindo ao Editor de Texto, Escolha uma opção! ");
             Console.WriteLine("1 - Traduzir texto para maiúsculo. ");
             Console.WriteLine("2 - Traduzir texto para minúsculo. ");
             Console.WriteLine("3 - Verificar quantidade de caracteres. ");
             Console.WriteLine("4 - Verificar se existe uma palavra no texto. ");
             Console.WriteLine("5 - Substituir palavras no texto.");
+            Console.WriteLine("6 - Sair");
             int OpcaoSelecionada = int.Parse(Console.ReadLine());
             switch (OpcaoSelecionada)
             {
@@ -22,7 +23,7 @@ namespace TextEditorV2
                     break;
                 case 2:
                     TextoMinusculo textinhoMin = new TextoMinusculo();
-                    textinhoMin.textoMinusculo();;
+                    textinhoMin.textoMinusculo(); 
                     break;
                 case 3:
                     Caracteres carac = new Caracteres();
@@ -35,6 +36,13 @@ namespace TextEditorV2
                 case 5:
                     TrocarPalavraTexto tradepalavra = new TrocarPalavraTexto();
                     tradepalavra.TrocarPalavra();
+                    break;
+                case 6:
+                    System.Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Opção invalida, tente novamente");
+
                     break;
             }
 

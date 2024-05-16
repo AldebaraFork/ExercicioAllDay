@@ -19,6 +19,7 @@ namespace CalculadoraV2
             Console.WriteLine("6 - MOD");
             Console.WriteLine("7 - Notas");
             Console.WriteLine("8 - MMC");
+            Console.WriteLine("9 - Sair");
             short OpcaoSelcionada = short.Parse(Console.ReadLine());
             switch (OpcaoSelcionada)
             {
@@ -61,6 +62,10 @@ namespace CalculadoraV2
                     Console.Clear();
                     MDC mdc = new MDC();
                     mdc.CalcularMDC();
+                    break;
+                case 9:
+                    Console.Clear();
+                    System.Environment.Exit(0);
                     break;
                 default:
                     Console.Clear();
