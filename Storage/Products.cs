@@ -29,10 +29,5 @@ namespace Storage
 
                 return totalValor;
             }
-        
-      
-
-        
-
     }
 }

@@ -43,21 +43,13 @@ namespace Storage
 
             }else if (SelectedOption == "N" || SelectedOption == "n")
             {
-                Console.WriteLine("Press any key to exit");
+                Console.WriteLine("Bye! please press any key to exit");
                 Console.ReadKey();
             }
             else
             {
-                Console.WriteLine("Wrong answer");
+                Console.WriteLine("Wrong answer my boy");
             }
-          
-            
-
         }
-
-
-
-
-
     }
 }

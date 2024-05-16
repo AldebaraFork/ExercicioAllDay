@@ -14,10 +14,12 @@
             switch (SelectedOption)
             {
                 case 1:
+                    Console.Clear();
                     var producto = new Products();
                     producto.PriceXCount(0);
                     break;
                 case 2:
+                    Console.Clear();
                     AddProduct addProduct = new AddProduct();
                     addProduct.AddProducts();
                     break;
