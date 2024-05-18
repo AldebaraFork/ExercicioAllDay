@@ -15,7 +15,7 @@ namespace Stopwatch
 
             Console.WriteLine("Deseja contar em minuto ou segundo?");
             Console.WriteLine("M = Minuto (EX: 1m = 1 minuto)");
-            Console.WriteLine("S = Segundo (Ex: 10s = 10 segundos)");
+            Console.WriteLine("S = Segundo (Ex: 10s = 10 segundo)");
             string data = Console.ReadLine().ToLower();
             char type = char.Parse(data.Substring(data.Length - 1, 1));
             int time = int.Parse(data.Substring(0, data.Length - 1));
