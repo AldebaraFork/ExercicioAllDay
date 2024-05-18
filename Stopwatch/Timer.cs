@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Stopwatch
 {
@@ -19,27 +20,37 @@ namespace Stopwatch
             short OpcaoSelecionada = short.Parse(Console.ReadLine());
             switch (OpcaoSelecionada)
             {
+                //temporizador
                 case 1:
                     Console.WriteLine("Até quando deseja contar?");
                     int tempoEscolhido = int.Parse(Console.ReadLine());
                     int tempoTeste = 0;
                     while (tempoEscolhido > tempoTeste)
                     {
+                        Console.Clear();
                         tempoTeste++;
                         Console.WriteLine($"Passou: {tempoTeste} segundos");
+                        Thread.Sleep(1000);
                     }
                     break;
+                    //cronometro
                 case 2:
                     Console.WriteLine("Desde quando deseja contar?");
                     int TempoReverso = int.Parse(Console.ReadLine());
                     int tempoTesteReverso = 0;
                     while (TempoReverso > tempoTesteReverso)
                     {
+                        Console.Clear();
                         TempoReverso--;
-                        Console.WriteLine($"ja se foi: {TempoReverso} segundos");
+                        Console.WriteLine($"faltam: {TempoReverso} segundos");
+                        Thread.Sleep(1000);
                     }
                     break;
                 case 3:
+                    Console.Clear();
+                    Console.WriteLine("Voltando para o menu...");
+                    
+                    Thread.Sleep(2500);
                     Menu menu = new Menu();
                     menu.Menuzada();
                     break;

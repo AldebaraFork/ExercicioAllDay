@@ -11,11 +11,10 @@ namespace Stopwatch
         public void Menuzada()
         {
             Console.WriteLine("Welcome to StopWatch, please select one option below: ");
-            Console.WriteLine("1 - What time is now?");
+            Console.WriteLine("1 - Count in Sec or Min");
             Console.WriteLine("2 - Timer");
-            Console.WriteLine("3 - Stopwatch");
-            Console.WriteLine("4 - How much time is left to....");
-            Console.WriteLine("5 - Exit");
+            Console.WriteLine("3 - How much time is left to....");
+            Console.WriteLine("4 - Exit");
             short SelectedOption = short.Parse(Console.ReadLine());
             switch (SelectedOption)
             {
@@ -27,7 +26,7 @@ namespace Stopwatch
                     Timer timer = new Timer();
                     timer.Contador();
                     break;
-                case 5:
+                case 4:
                     System.Environment.Exit(0);
                     break;
                 default:
