@@ -43,7 +43,7 @@ namespace TextEditorV2
                 }
                 else if (Opcao == "sair")
                 {
-                    Console.WriteLine("Saindo do aplicativo");
+                    Console.WriteLine("Obrigad por usar meu app! Saindo do aplicativo");
                     Thread.Sleep(3000);
                     System.Environment.Exit(0);
                 }
