@@ -12,3 +12,6 @@ Now im trying to improve more performance into my exercises
 
 # ExercicioAllDay 15/05/2024 
 I was working on a new storage system management, Im studying for Db like SQL to improve my projects
+
+# ExercicioAllDay 21/04/2024
+I forget to update the main readme, but we have more features in CalculadoraV2 and TextEditor, now you can save your file!
