@@ -50,8 +50,8 @@ namespace TextEditorV2
                     break;
                 case 6:
                     Console.Clear();
-                    EditarArquivo edit = new EditarArquivo();
-                    edit.Editar();
+                    CriarArquivo edit = new CriarArquivo();
+                    edit.CriarTexto();
                     break;
                 case 7:
                     Console.Clear();
@@ -59,6 +59,9 @@ namespace TextEditorV2
                     abrir.Abrir();
                     break;
                 case 8:
+                    Console.Clear();
+                    Console.WriteLine("Adeus! obrigado por usar meu app");
+                    Thread.Sleep(2000);
                     System.Environment.Exit(0);
                     break;
                 default:

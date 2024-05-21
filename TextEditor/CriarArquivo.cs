@@ -8,9 +8,9 @@ using System.IO;
 
 namespace TextEditorV2
 {
-    internal class EditarArquivo
+    internal class CriarArquivo
     {
-        public void Editar()
+        public void CriarTexto()
         {
             Console.Clear();
             Console.WriteLine("Por-favor insira o texto que deseja editar (ESC para sair)");
@@ -28,7 +28,8 @@ namespace TextEditorV2
             char RespostaSalvamento = char.Parse(Console.ReadLine().ToLower());
             if (RespostaSalvamento == 's')
             {
-                SalvarTexto(TextoInserido);
+               SalvarTexto salvartexto = new SalvarTexto();
+                salvartexto.SalvarTextos(TextoInserido);
 
             }
             else if (RespostaSalvamento == 'n'){
@@ -47,24 +48,6 @@ namespace TextEditorV2
             }
 
         }
-        public void SalvarTexto(string textoinserido)
-        {
-            Console.Clear();
-            Console.WriteLine("Qual caminho deseja salvar o arquivo? ");
-            var path = Console.ReadLine();
-            using (var arquivo = new StreamWriter(path))
-            {
-               //salvando arquivo o texto inserido no path
-                               arquivo.WriteLine(textoinserido);
-
-            }
-            Console.Clear();
-            Console.WriteLine($"Arquivo salvo com sucesso em {path}");
-            Console.WriteLine("Voltando ao menu principal");
-            Thread.Sleep(3500);
-            Console.Clear();
-            Menu menu = new Menu();
-            menu.Menuzada();
-        }
+       
     }
 }
