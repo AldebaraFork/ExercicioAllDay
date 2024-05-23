@@ -16,9 +16,11 @@ namespace TextEditorV2
             Console.WriteLine("3 - Verificar quantidade de caracteres. ");
             Console.WriteLine("4 - Verificar se existe uma palavra no texto. ");
             Console.WriteLine("5 - Substituir palavras no texto.");
-            Console.WriteLine("6 - Criar arquivo ");
-            Console.WriteLine("7 - Abrir arquivo ");
-            Console.WriteLine("8 - Sair");
+            Console.WriteLine("6 - Adicionar palavras ao texto");
+            Console.WriteLine("7 - Remover palavras do texto");
+            Console.WriteLine("8 - Criar arquivo ");
+            Console.WriteLine("9 - Abrir arquivo ");
+            Console.WriteLine("0 - Sair");
             short OpcaoSelecionada = short.Parse(Console.ReadLine());
             switch (OpcaoSelecionada)
             {
@@ -50,15 +52,25 @@ namespace TextEditorV2
                     break;
                 case 6:
                     Console.Clear();
-                    CriarArquivo edit = new CriarArquivo();
-                    edit.CriarTexto();
+                    AddRemove AddPalavra = new AddRemove();
+                    AddPalavra.AdicionarPalavra();
                     break;
                 case 7:
+                    Console.Clear();
+                    AddRemove removepalavra = new AddRemove();
+                    removepalavra.RemoverPalavra();
+                    break;
+                case 8:
+                    Console.Clear();
+                    CriarArquivo criar = new CriarArquivo();
+                    criar.CriarTexto();
+                    break;
+                case 9:
                     Console.Clear();
                     AbrirArquivo abrir = new AbrirArquivo();
                     abrir.Abrir();
                     break;
-                case 8:
+                case 0:
                     Console.Clear();
                     Console.WriteLine("Adeus! obrigado por usar meu app");
                     Thread.Sleep(2000);
