@@ -59,7 +59,7 @@ namespace EditorHTML
             Console.SetCursorPosition(4, 6);
             Console.WriteLine("2 - Abrir um arquivo");
             Console.SetCursorPosition(4, 7);
-            Console.WriteLine("==========================");
+            Console.WriteLine("3 - Editar um arquivo");
             Console.SetCursorPosition(4, 8);
             Console.WriteLine("0 - Sair!");
             Console.SetCursorPosition(4, 9);
@@ -75,6 +75,9 @@ namespace EditorHTML
                     Editor.OpenFile();
                    
                     break;
+                    case 3:
+                    Visualizador.Show();
+                     break;
                 case 0:
                     Console.WriteLine("Saindo do aplicativo! ");
                     Thread.Sleep(2500);
