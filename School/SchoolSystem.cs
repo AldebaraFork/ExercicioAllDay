@@ -30,6 +30,8 @@ namespace School
                 case 3:
                     break;
                 case 4:
+                    VerificarAulas verificas = new VerificarAulas();
+                    verificas.Aulas();
                     break;
                 case 0:
                     Console.Clear();

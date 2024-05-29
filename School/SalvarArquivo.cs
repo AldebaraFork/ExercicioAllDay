@@ -32,12 +32,13 @@ namespace School
             {
                 Console.WriteLine("Deseja sair do app ou voltar ao menu principal? MENU/SAIR");
                 var RespostaSaida = Console.ReadLine().ToLower();
-                if (RespostaSaida == "MENU")
+                if (RespostaSaida == "menu")
                 {
                     Console.WriteLine("Retornando ao menu....");
                     Thread.Sleep(2500);
+                    Console.Clear();
                     system.Menu();
-                }else if (RespostaSaida == "Sair")
+                }else if (RespostaSaida == "sair")
                 {
                     Console.WriteLine("Saindo do app....");
                     Thread.Sleep(2500);
