@@ -13,9 +13,7 @@ namespace School
             var Dia = DateTime.Now;
             Console.WriteLine($"Olá, bem vindo a escola hoje é {Dia} , O que deseja fazer?");
             Console.WriteLine("1 - gerar ID ");
-            Console.WriteLine("2 - fazer Login");
-            Console.WriteLine("3 - verificar cargo");
-            Console.WriteLine("4 - verificar aulas");
+            Console.WriteLine("2 - verificar aulas");
             Console.WriteLine("0 - sair");
 
             var EscolhaMenu = short.Parse(Console.ReadLine());
@@ -26,10 +24,6 @@ namespace School
                     gera.gerarID();
                     break;
                 case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
                     VerificarAulas verificas = new VerificarAulas();
                     verificas.Aulas();
                     break;
