@@ -10,7 +10,7 @@ namespace School
     {
         public void Menu()
         {
-            var Dia = DateTime.Now;
+            var Dia = DateTime.Today;
             Console.WriteLine($"Olá, bem vindo a escola hoje é {Dia} , O que deseja fazer?");
             Console.WriteLine("1 - gerar ID ");
             Console.WriteLine("2 - verificar aulas");
