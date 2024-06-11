@@ -85,40 +85,48 @@ namespace CalculadoraV2
 
         public void RetornarMenu()
         {
-            Console.Clear();
-            Menu menu = new Menu();
-            Console.WriteLine("Deseja retornar ao menu ou sair? MENU/SAIR");
-            string RespMenu = Console.ReadLine().ToLower();
-            if (RespMenu == "menu")
+            try
             {
                 Console.Clear();
-                Console.WriteLine("Retornando ao menu principal.......");
-                Thread.Sleep(2000);
-                 Console.Clear();
-                menu.Menuzada();
+                Menu menu = new Menu();
+                Console.WriteLine("Deseja retornar ao menu ou sair? MENU/SAIR");
+                string RespMenu = Console.ReadLine().ToLower();
+                if (RespMenu == "menu")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Retornando ao menu principal.......");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    menu.Menuzada();
+                }
+                else if (RespMenu == "sair")
+                {
+                    Console.Clear();
+                    Console.WriteLine("Saindo.....");
+                    Thread.Sleep(2000);
+                    System.Environment.Exit(0);
+                }
+                else if (string.IsNullOrEmpty(RespMenu))
+                {
+                    Console.WriteLine("Por-favor insira algum valor...");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    RetornarMenu();
+                }
+                else
+                {
+                    Console.WriteLine("Opção invalida! retornando ao menu principal.....");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    menu.Menuzada();
+                }
             }
-            else if (RespMenu == "sair")
+            catch (Exception ex)
             {
-                Console.Clear();
-                Console.WriteLine("Saindo.....");
-                Thread.Sleep(2000);
-                System.Environment.Exit(0);
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.InnerException);
+                Console.WriteLine("Algo deu errado");
             }
-            else if (string.IsNullOrEmpty(RespMenu))
-            {
-                Console.WriteLine("Por-favor insira algum valor...");
-                Thread.Sleep(2000);
-                Console.Clear();
-                RetornarMenu();
-            }
-            else
-            {
-                Console.WriteLine("Opção invalida! retornando ao menu principal.....");
-                Thread.Sleep(2000);
-                Console.Clear();
-                menu.Menuzada();
-            }
-
         }
     }
 }
