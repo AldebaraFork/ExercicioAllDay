@@ -5,21 +5,57 @@ namespace ExercitandoOOP
 {
     internal class Program
     {
+        //CLASSE PRINCIPAL 
         static void Main(string[] args)
         {
+            //INICIO DO PROGRAMA
             People people = new People();
-            VerificarNome();
-            VerificarIdade();
-            VerificarCPF();
-        }
+            people.VerificarNome();
 
+        }
+    }
+
+    //DADOS DA PESSOA E METODOS
+    public class People()
+    {
+        public string name { get; set; }
+
+        public DateTime date { get; set; }
+        public string CPF { get; set; }
         //VERIFICAÇÃO DE NOME 
-        static void VerificarNome()
+        public void VerificarNome()
         {
             People people = new People();
-            Console.Write("Por-favor insira seu nome: ");
+            Console.WriteLine("Por-favor insira seu nome: ");
             people.name = Console.ReadLine();
-            Console.WriteLine($"Bem vindo {people.name}! Por-favor agora insira seu aniversario:");
+            if (people.name != string.Empty)
+            {
+                Console.Clear();
+                Console.WriteLine($"Bem vindo {people.name}! Por-favor agora insira seu aniversario:");
+                Thread.Sleep(2000);
+                VerificarIdade();
+            }
+            else if (people.name == string.Empty)
+            {
+                Console.WriteLine("Por-favor insira um valor valido! ");
+                Thread.Sleep(2000);
+                Console.Clear();
+                VerificarNome();
+            }
+            else if (string.IsNullOrEmpty(people.name))
+            {
+                Console.WriteLine("Por-favor insira um valor valido! ");
+                Thread.Sleep(2000);
+                Console.Clear();
+                VerificarNome();
+            }
+            else
+            {
+                Console.WriteLine("Ocorreu um erro......");
+                Thread.Sleep(2000);
+                Console.Clear();
+                VerificarNome();
+            }
         }
         //VERIFICAÇÃO DE IDADE
         static void VerificarIdade()
@@ -28,18 +64,32 @@ namespace ExercitandoOOP
             {
                 People people = new People();
                 people.date = DateTime.Parse(Console.ReadLine());
-                if (people.date.Year >= 2006)
+                var Data = DateTime.Now.Year - people.date.Year;
+                //MAIOR DE 18 ANOS
+                if (Data >= 18)
                 {
-                    Console.WriteLine($"Você nasceu em: {people.date.ToShortDateString()}");
-                    
+                    Console.WriteLine($"Ótimo pode prosseguir! Você tem {Data} anos");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    VerificarCPF();
                 }
-                else if (people.date.Year < 2006)
+                //MENOR DE 18 ANOS
+                else if (Data < 18)
                 {
                     Console.WriteLine("Você é menor de 18 anos, infelizmente não pode prosseguir");
+                    System.Environment.Exit(0);
                 }
+                //ERRO
                 else if (string.IsNullOrEmpty(people.date.ToString()))
                 {
                     Console.WriteLine("Por-favor insira um valor valido!");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    VerificarIdade();
+                }
+                else
+                {
+                    Console.WriteLine("Insira um valor valido! ");
                     Thread.Sleep(2000);
                     Console.Clear();
                     VerificarIdade();
@@ -58,6 +108,7 @@ namespace ExercitandoOOP
         {
 
             People people = new People();
+            MenuPrincipal menuzada = new MenuPrincipal();
             try
             {
                 Console.Write("Ótimo, agora por-favor digite seu CPF:");
@@ -82,23 +133,58 @@ namespace ExercitandoOOP
                     Thread.Sleep(2000);
                     Console.Clear();
                     //menu principal
+                    menuzada.MainMenu();
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine();
+                Console.WriteLine("Ocorreu o seguinte erro:");
+                Console.WriteLine(ex.Source);
+                Console.WriteLine(ex.Message);
             }
 
         }
-
-        //PESSOA 
-        public class People()
-        {
-            public string name { get; set; }
-
-            public DateTime date { get; set; }
-            public string CPF { get; set; }
-        }
-
     }
+
+
+    //OPÇOES DO MENU PRINCIPAL
+    public class MenuPrincipal()
+    {
+        People people = new People();
+        public void MainMenu()
+        {
+            Console.Clear();
+            Console.WriteLine($"Olá {people.name}, bem vindo ao menu principal! O que gostaria de fazer?");
+            Console.WriteLine("1 - OpçãoAleatoria");
+            Console.WriteLine("2 - OpçãoAleatoria");
+            Console.WriteLine("3 - OpçãoAleatoria");
+            Console.WriteLine("4 - OpçãoAleatoria");
+            Console.WriteLine("0 - sair");
+            short Option = short.Parse(Console.ReadLine());
+            switch (Option)
+            {
+                case 1:
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 0:
+                    Console.WriteLine("Saindo! Obrigado por usar meu app...");
+                    System.Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("Opção invalida ! retornando ao menu....");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    MainMenu();
+                    break;
+            }
+        }
+    }
+
+
+
 }
