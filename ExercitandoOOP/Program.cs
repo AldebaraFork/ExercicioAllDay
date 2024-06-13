@@ -16,12 +16,12 @@ namespace ExercitandoOOP
     }
 
     //DADOS DA PESSOA E METODOS
-    public class People()
+     class People()
     {
         public string name { get; set; }
 
         public DateTime date { get; set; }
-        public string CPF { get; set; }
+        protected string CPF { get; set; }
         //VERIFICAÇÃO DE NOME 
         public void VerificarNome()
         {
@@ -147,7 +147,7 @@ namespace ExercitandoOOP
     }
 
 
-    //OPÇOES DO MENU PRINCIPAL
+    //OPÇOES E MENU PRINCIPAL
     public class MenuPrincipal()
     {
         People people = new People();
