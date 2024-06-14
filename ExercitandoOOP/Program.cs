@@ -16,12 +16,19 @@ namespace ExercitandoOOP
     }
 
     //DADOS DA PESSOA E METODOS
-     class People()
+    public class People()
     {
-        public string name { get; set; }
 
-        public DateTime date { get; set; }
+        //PROPRIEDADES
+        protected string name { get; set; }
+
+        protected DateTime date { get; set; }
         protected string CPF { get; set; }
+
+       
+
+
+
         //VERIFICAÇÃO DE NOME 
         public void VerificarNome()
         {
@@ -34,14 +41,7 @@ namespace ExercitandoOOP
                 Console.WriteLine($"Bem vindo {people.name}! Por-favor agora insira seu aniversario:");
                 Thread.Sleep(2000);
                 VerificarIdade();
-            }
-            else if (people.name == string.Empty)
-            {
-                Console.WriteLine("Por-favor insira um valor valido! ");
-                Thread.Sleep(2000);
-                Console.Clear();
-                VerificarNome();
-            }
+            }           
             else if (string.IsNullOrEmpty(people.name))
             {
                 Console.WriteLine("Por-favor insira um valor valido! ");
@@ -79,14 +79,7 @@ namespace ExercitandoOOP
                     Console.WriteLine("Você é menor de 18 anos, infelizmente não pode prosseguir");
                     System.Environment.Exit(0);
                 }
-                //ERRO
-                else if (string.IsNullOrEmpty(people.date.ToString()))
-                {
-                    Console.WriteLine("Por-favor insira um valor valido!");
-                    Thread.Sleep(2000);
-                    Console.Clear();
-                    VerificarIdade();
-                }
+                            
                 else
                 {
                     Console.WriteLine("Insira um valor valido! ");
@@ -95,6 +88,7 @@ namespace ExercitandoOOP
                     VerificarIdade();
                 }
             }
+             //ERRO   
             catch (Exception ex)
             {
                 Console.WriteLine("Ocorreu o seguinte erro:");
@@ -147,14 +141,15 @@ namespace ExercitandoOOP
     }
 
 
+
     //OPÇOES E MENU PRINCIPAL
-    public class MenuPrincipal()
+    class MenuPrincipal : People
     {
-        People people = new People();
+        
         public void MainMenu()
         {
             Console.Clear();
-            Console.WriteLine($"Olá {people.name}, bem vindo ao menu principal! O que gostaria de fazer?");
+            Console.WriteLine($"Olá {name}, bem vindo ao menu principal! O que gostaria de fazer?");
             Console.WriteLine("1 - OpçãoAleatoria");
             Console.WriteLine("2 - OpçãoAleatoria");
             Console.WriteLine("3 - OpçãoAleatoria");
