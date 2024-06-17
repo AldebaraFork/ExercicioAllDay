@@ -25,7 +25,7 @@ namespace ExercitandoOOP
         protected DateTime date { get; set; }
         protected string CPF { get; set; }
 
-       
+
 
 
 
@@ -41,7 +41,7 @@ namespace ExercitandoOOP
                 Console.WriteLine($"Bem vindo {people.name}! Por-favor agora insira seu aniversario:");
                 Thread.Sleep(2000);
                 VerificarIdade();
-            }           
+            }
             else if (string.IsNullOrEmpty(people.name))
             {
                 Console.WriteLine("Por-favor insira um valor valido! ");
@@ -79,7 +79,7 @@ namespace ExercitandoOOP
                     Console.WriteLine("Você é menor de 18 anos, infelizmente não pode prosseguir");
                     System.Environment.Exit(0);
                 }
-                            
+
                 else
                 {
                     Console.WriteLine("Insira um valor valido! ");
@@ -88,7 +88,7 @@ namespace ExercitandoOOP
                     VerificarIdade();
                 }
             }
-             //ERRO   
+            //ERRO   
             catch (Exception ex)
             {
                 Console.WriteLine("Ocorreu o seguinte erro:");
@@ -143,14 +143,14 @@ namespace ExercitandoOOP
 
 
     //OPÇOES E MENU PRINCIPAL
-    class MenuPrincipal : People
+    class MenuPrincipal 
     {
-        
+
         public void MainMenu()
         {
             Console.Clear();
-            Console.WriteLine($"Olá {name}, bem vindo ao menu principal! O que gostaria de fazer?");
-            Console.WriteLine("1 - OpçãoAleatoria");
+            Console.WriteLine($"Olá , bem vindo ao menu principal! O que gostaria de fazer?");
+            Console.WriteLine("1 - Cadastrar Funcionario");
             Console.WriteLine("2 - OpçãoAleatoria");
             Console.WriteLine("3 - OpçãoAleatoria");
             Console.WriteLine("4 - OpçãoAleatoria");
@@ -159,6 +159,8 @@ namespace ExercitandoOOP
             switch (Option)
             {
                 case 1:
+                    Funcionario funcionario = new Funcionario();
+                    funcionario.CargoFuncionario();
                     break;
                 case 2:
                     break;
@@ -181,5 +183,17 @@ namespace ExercitandoOOP
     }
 
 
+    //FUNCIONARIO 
+    class Funcionario : People
+    {
+        protected Guid IdFuncionario = Guid.NewGuid();
+        string Cargo { get; set; }
 
+        public void CargoFuncionario()
+        {
+            Console.Clear();
+            Console.WriteLine($"Olá {name}, seu ID é: {IdFuncionario}");
+
+        }
+    }
 }
