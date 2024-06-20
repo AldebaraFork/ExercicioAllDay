@@ -1,5 +1,8 @@
 ﻿using System.Globalization;
 using System.Numerics;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Linq;
 
 namespace ExercitandoOOP
 {
@@ -11,18 +14,17 @@ namespace ExercitandoOOP
             //INICIO DO PROGRAMA
             People people = new People();
             people.VerificarNome();
-
         }
     }
 
     //DADOS DA PESSOA E METODOS
-    public class People()
+    public class People
     {
 
         //PROPRIEDADES
-        protected string name { get; set; }
+        protected string Name { get; set; }
 
-        protected DateTime date { get; set; }
+        protected DateTime Date { get; set; }
         protected string CPF { get; set; }
 
 
@@ -32,22 +34,15 @@ namespace ExercitandoOOP
         //VERIFICAÇÃO DE NOME 
         public void VerificarNome()
         {
-            People people = new People();
-            Console.WriteLine("Por-favor insira seu nome: ");
-            people.name = Console.ReadLine();
-            if (people.name != string.Empty)
+
+            Console.Write("Por-favor insira seu nome: ");
+            this.Name = Console.ReadLine();
+            if (!string.IsNullOrEmpty(this.Name))
             {
                 Console.Clear();
-                Console.WriteLine($"Bem vindo {people.name}! Por-favor agora insira seu aniversario:");
+                Console.WriteLine($"Bem vindo {this.Name}! Por-favor agora insira seu aniversario:");
                 Thread.Sleep(2000);
                 VerificarIdade();
-            }
-            else if (string.IsNullOrEmpty(people.name))
-            {
-                Console.WriteLine("Por-favor insira um valor valido! ");
-                Thread.Sleep(2000);
-                Console.Clear();
-                VerificarNome();
             }
             else
             {
@@ -58,13 +53,13 @@ namespace ExercitandoOOP
             }
         }
         //VERIFICAÇÃO DE IDADE
-        static void VerificarIdade()
+        public void VerificarIdade()
         {
             try
             {
-                People people = new People();
-                people.date = DateTime.Parse(Console.ReadLine());
-                var Data = DateTime.Now.Year - people.date.Year;
+
+                this.Date = DateTime.Parse(Console.ReadLine());
+                var Data = DateTime.Now.Year - this.Date.Year;
                 //MAIOR DE 18 ANOS
                 if (Data >= 18)
                 {
@@ -98,23 +93,23 @@ namespace ExercitandoOOP
         }
 
         //VERIFICAÇÃO DE CPF
-        static void VerificarCPF()
+        public void VerificarCPF()
         {
 
-            People people = new People();
+
             MenuPrincipal menuzada = new MenuPrincipal();
             try
             {
                 Console.Write("Ótimo, agora por-favor digite seu CPF:");
-                people.CPF = Console.ReadLine();
-                if (people.CPF.Length > 11)
+                this.CPF = Console.ReadLine();
+                if (this.CPF.Length > 11)
                 {
                     Console.WriteLine("CPF invalido! insira a quantidade correta de caracteres!");
                     Thread.Sleep(2000);
                     Console.Clear();
                     VerificarCPF();
                 }
-                else if (people.CPF.Length < 11)
+                else if (this.CPF.Length < 11)
                 {
                     Console.WriteLine("CPF invalido! insira a quantidade correta de caracteres!");
                     Thread.Sleep(2000);
@@ -143,13 +138,12 @@ namespace ExercitandoOOP
 
 
     //OPÇOES E MENU PRINCIPAL
-    class MenuPrincipal 
+    public class MenuPrincipal : People
     {
-
         public void MainMenu()
-        {
+        {            
             Console.Clear();
-            Console.WriteLine($"Olá , bem vindo ao menu principal! O que gostaria de fazer?");
+            Console.WriteLine($"Olá {base.Name}, bem vindo ao menu principal! O que gostaria de fazer?");
             Console.WriteLine("1 - Cadastrar Funcionario");
             Console.WriteLine("2 - OpçãoAleatoria");
             Console.WriteLine("3 - OpçãoAleatoria");
@@ -183,17 +177,28 @@ namespace ExercitandoOOP
     }
 
 
+
+
+
     //FUNCIONARIO 
-    class Funcionario : People
+    public class Funcionario : People
     {
         protected Guid IdFuncionario = Guid.NewGuid();
-        string Cargo { get; set; }
+        public string cargo = "funcionario";
 
+
+        //CARGO DO FUNCIONARIO
         public void CargoFuncionario()
         {
+
             Console.Clear();
-            Console.WriteLine($"Olá {name}, seu ID é: {IdFuncionario}");
+            Console.WriteLine($"Olá {Name}, seu ID é: {IdFuncionario}");
+            Console.WriteLine($"Seu cargo atual é: {cargo}");
 
         }
     }
+
+
+
+
 }
