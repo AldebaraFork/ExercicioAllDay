@@ -8,4 +8,7 @@ Second version of CalculatorV2, now added division and tabble operations!
 Added new option MOD.
 
 # ExercicioTodoDia 02/05/2024
-After weeks of studying, i used abstraction to separate calculadoraV2 in several pieces to improve performance.
+After weeks of studying, i used abstraction to separate calculadoraV2 in several pieces.
+
+# ExercicioTodoDia 04/07/2024
+Calculator V2 is complete! I will study more and more to improve myself and maybe a V3 Calculator in the future?
