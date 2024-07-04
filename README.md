@@ -1,5 +1,5 @@
 # ExercicioAllDay 18/04/2024
-A repository to post daily activities
+Hello! 😁 This is a repository to save my C# exercises when I was a beginner!
 
 # ExercicioAllDay 22/04/2024 
 Calculadorav2 is the first activity complete from this repository! Now i´m gonna start TextEditor
@@ -17,6 +17,6 @@ I was working on a new storage system management, Im studying for Db like SQL to
 I forget to update the main readme, but we have more features in CalculadoraV2 and TextEditor, now you can save your file!
 
 
-=========================================================================================================================================
+=========================================================================================================
 
  ORGANIZED REPOSITORY 🐱‍👤
