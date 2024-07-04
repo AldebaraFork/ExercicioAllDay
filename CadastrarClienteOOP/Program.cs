@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using System.Net.Http.Headers;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CadastrarClienteOOP
 {
@@ -33,6 +34,7 @@ namespace CadastrarClienteOOP
                     gerencia.ObterDadosCliente();
                     break;
                 case 2:
+
                     break;
                 case 3:
                     break;
@@ -69,58 +71,81 @@ namespace CadastrarClienteOOP
         protected string EmailUsuario { get; set; }
 
         protected short IdadeUsuario { get; set; }
-        
 
-
-        public void Usuario(string nomeUsuario, string emailUsuario, short idadeUsuario)
-        {
-            NomeUsuario = nomeUsuario;
-            EmailUsuario = emailUsuario;
-            IdadeUsuario = idadeUsuario;
-        }
-
+        //OBTER DADOS DO CLIENTE
         public void ObterDadosCliente()
         {
 
             Console.Clear();
+
+            //OBTER NOME DO CLIENTE
             Console.Write("Insira o nome do usuario: ");
-            NomeUsuario = Console.ReadLine().ToLower();
-            Console.Write("Agora insira o email: ");
-            EmailUsuario = Console.ReadLine();
+            NomeUsuario = Console.ReadLine();
+
+            //CASO O USUARIO NAO INSIRA UM VALOR
+            if (string.IsNullOrEmpty(NomeUsuario))
+            {
+                Console.WriteLine("Por-favor insira um valor valido! ");
+                Thread.Sleep(2000);
+                Console.Clear();
+                ObterDadosCliente();
+            }
+            //NOME VALIDO
+            else
+            {
+                Console.Write("Agora insira o email: ");
+                EmailUsuario = Console.ReadLine();
+                if (string.IsNullOrEmpty(EmailUsuario))
+                {
+                    Console.WriteLine("Insira um email valido! ");
+                    Thread.Sleep(2000);
+                    Console.Clear();
+                    ObterDadosCliente();
+                }
+
+            }
+
 
             //OBTER IDADE DO CLIENTE
 
             Console.Write("Agora insira a idade: ");
             IdadeUsuario = short.Parse(Console.ReadLine());
-
-            if (IdadeUsuario < 18)
+            try
             {
                 //CASO O USUARIO SEJA DE MENOR
-                Console.WriteLine("Você ainda é menor de idade.");
-                Thread.Sleep(2000);
-                principal.RetornarMenu();
+                if (IdadeUsuario < 18)
+                {
+                   
+                    Console.WriteLine("Você ainda é menor de idade.");
+                    Thread.Sleep(2000);
+                    principal.RetornarMenu();
+                }
+                 //CASO O USUARIO SEJA DE MAIOR , PROSSEGUIR
+                else if (IdadeUsuario >= 18)
+                {
+                  
+                    Console.WriteLine($"Cliente {NomeUsuario}  cadastrado com sucesso! ");
+                    Thread.Sleep(2000);
+                    principal.RetornarMenu();
+
+                }
             }
-            else if (IdadeUsuario >= 18)
+            //CASO APRESENTE ERRO OU VALOR INVALIDO
+            catch (FormatException ex)
             {
-                //CASO O USUARIO SEJA DE MAIOR , PROSSEGUIR
-                Console.WriteLine("Você é maior de idade, pode prosseguir! ");
+                Console.WriteLine("Insira um valor valido");
+                Console.WriteLine(ex.Message);
 
             }
-            else
-            {
-                Console.WriteLine("Valor invalido! por-favor insira um valor valido...");
-                Thread.Sleep(2000);
-                principal.RetornarMenu();
-            }
-
-
-
         }
+
 
     }
 
-    public class
 }
+
+
+
 
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Data.SqlTypes;
 using System.Globalization;
 using System.Security.Cryptography.X509Certificates;
@@ -65,17 +66,24 @@ namespace BankingPOO
 
 
     }
+
+    public interface IPagamento
+    {
+        double Valor { get; set; }
+        
+        DateTime Vencimento {get; set;}
+    }
     //PAGAMENTO CARTAO
-    public class PagamentoCartao : DadosUsuario
+    public class PagamentoCartao : IPagamento
     {
         //DADOS CARTAO
         private string NumeroCartao { get; set; }
         private string NomeCartao { get; set; }
-
-
+      
         private string CodigoSeguranca { get; set; }
 
         public double Valor { get; set; }
+        public DateTime Vencimento {get; set;}
 
         //PAGAMENTO CARTAO
 
@@ -84,6 +92,8 @@ namespace BankingPOO
             //DADOS CARTÃO
             SalvarPagamentos salva = new SalvarPagamentos();
             Menu menu = new Menu();
+            Vencimento = DateTime.Today;
+            Console.WriteLine($"Boleto com vencimento no dia: {Vencimento.ToShortDateString}");
             Console.Write("Por-favor insira os numeros no cartão: ");
             NumeroCartao = Console.ReadLine();
             Console.Write("Agora insira o nome impresso no cartão: ");
@@ -154,13 +164,11 @@ namespace BankingPOO
 
 
     //PAGAMENTO BOLETO
-    public class PagamentoBoleto : DadosUsuario
+    public class PagamentoBoleto : IPagamento
     {
 
 
         public DateTime Vencimento { get; set; }
-
-
 
         public double Valor { get; set; }
 
@@ -169,6 +177,7 @@ namespace BankingPOO
         {
             Menu menu = new Menu();
             SalvarPagamentos salvar = new SalvarPagamentos();
+            Console.WriteLine($"Boleto com pagamento pendente! Data de vencimento: {Vencimento.Date}");
             //VALOR DO BOLETO
             Console.WriteLine("Qual o valor de pagamento do boleto?");
             Valor = double.Parse(Console.ReadLine());
@@ -210,7 +219,7 @@ namespace BankingPOO
 
         public void Menuzada()
         {
-            DadosUsuario dados = new DadosUsuario();
+
             PagamentoCartao cartao = new PagamentoCartao();
             PagamentoBoleto boleto = new PagamentoBoleto();
 
