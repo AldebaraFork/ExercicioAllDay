@@ -1,35 +1,50 @@
-﻿namespace PaymentSystem
+﻿using System.Runtime.CompilerServices;
+
+namespace PaymentSystem
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            PessoaFisica pessoaFisica = new PessoaFisica();
+            PessoaJuridica pessoaJuridica = new PessoaJuridica();
 
-        }
-        public interface IPagamento
-        {
-            double Valor { get; set; }
-            DateTime Vencimento { get; set; }
+            pessoaJuridica.Nome = "eduardo";
+            pessoaFisica.Nome = "eduardo";
 
-            Guid ReciboPagamento { get; set; }
-        }
-
-        public class PagamentoCartao : IPagamento
-        {
-            //INTERFACE 
-            public double Valor { get; set; }
-            public DateTime Vencimento { get; set; }
-            public Guid ReciboPagamento { get; set; }
-
-            //DADOS CARTÃO 
-            protected string NumeracaoCartao { get; set; }
-            protected string CVV { get; set; }
-            protected string NomeCartao { get; set; }
-
-            public void PagarCartao()
+            if (pessoaJuridica.Nome.Equals(pessoaFisica.Nome))
             {
-                Console.WriteLine("")
+                Console.WriteLine("Os nomes sao iguais");
             }
+            else
+            {
+                Console.WriteLine("Os nomes sao diferentes!");
+                
+            }
+        }
+        public interface IPessoa
+        {
+
+            string Nome { get; set; }
+            int Id { get; set; }
+
+        }
+
+        public class PessoaJuridica : IPessoa
+        {
+
+            public string Nome { get; set; }
+            public int Id { get; set; }
+            public int CNPJ { get; set; }
+        }
+
+        public class PessoaFisica : IPessoa
+        {
+
+            public string Nome { get; set; }
+            public int Id { get; set; }
+            public int CPF { get; set; }
+
         }
     }
 }
