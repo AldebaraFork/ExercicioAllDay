@@ -9,16 +9,16 @@ namespace PaymentSystem
             PessoaFisica pessoaFisica = new PessoaFisica();
             PessoaJuridica pessoaJuridica = new PessoaJuridica();
 
-            pessoaJuridica.Nome = "eduardo";
-            pessoaFisica.Nome = "eduardo";
+            pessoaJuridica.Id = 12;
+            pessoaFisica.Id = 12;
 
-            if (pessoaJuridica.Nome.Equals(pessoaFisica.Nome))
+            if (pessoaJuridica.Id.Equals(pessoaFisica.Id))
             {
-                Console.WriteLine("Os nomes sao iguais");
+                Console.WriteLine(" sao iguais");
             }
             else
             {
-                Console.WriteLine("Os nomes sao diferentes!");
+                Console.WriteLine(" sao diferentes!");
                 
             }
         }
